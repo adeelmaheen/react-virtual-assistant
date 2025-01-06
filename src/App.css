@@ -6,12 +6,12 @@
   align-items: center;
   justify-content: start;
   flex-direction: column;
-  padding: 10px;
+  padding: 50px;
   gap: 10px;
 }
 #shifra{
   height: 65%;
-  width: 25%;
+  width: 40%;
 }
 span{
   background: linear-gradient(to right, rgb(34, 221, 231), rgb(237, 4, 125));
@@ -26,6 +26,7 @@ button{
   align-items: center;
   justify-content: center;
   gap: 20px;
+  padding: 20px;
   font-size: 20px;
   border-radius: 20px;
   border: none;
@@ -54,4 +55,96 @@ p{
 #aigif{
   width: 50vh;
   height: 100px;
+} 
+
+.speak-img {
+  width: 100px;
+}
+
+.aigif-img {
+  width: 50vh;
+  height: 100px;
+}
+/* ------------------- Responsive Styles ------------------- */
+
+/* 1. Media Query for Screens 768px Wide or Smaller */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: auto; /* Allow height to adjust based on content */
+    gap: 20px;
+  }
+
+  /* Adjust AI Assistant Image */
+  #shifra {
+    height: 40%;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  /* Center the Text */
+  .main span {
+    text-align: center;
+    font-size: 1.8rem; /* Adjust font size for better readability */
+    background: linear-gradient(to right, rgb(34, 221, 231), rgb(237, 4, 125));
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Adjust Button Styling */
+  button {
+    width: 150px;
+    height: 40px;
+    font-size: 1rem;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  /* Adjust Speak Images */
+  .response img {
+    width: 80px; /* Reduce image size for small screens */
+  }
+
+  /* Adjust Paragraph Text */
+  .response p {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+}
+
+/* 2. Media Query for Very Small Screens (e.g., 480px and Below) */
+@media (max-width: 480px) {
+  .main {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  #shifra {
+    height: 35%;
+    width: 90%;
+    max-width: 250px;
+  }
+
+  .main span {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: 130px;
+    height: 35px;
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+
+  .response img {
+    width: 60px;
+  }
+
+  .response p {
+    font-size: 0.9rem;
+    padding: 0 15px;
+  }
 }

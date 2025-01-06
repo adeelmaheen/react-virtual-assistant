@@ -5,11 +5,10 @@ import speak from './assets/speak.gif';
 import aigif from './assets/aiVoice.gif';
 import { FaMicrophoneAlt } from 'react-icons/fa';
 import { useContext } from 'react';
-import { datacontext } from '../src/context/UserContext';
+import { datacontext } from './context/UserContext';  
 
 const App = () => {
-  let { 
-    recognition,
+  const { 
     speaking,
     setSpeaking,
     prompt,
@@ -17,12 +16,6 @@ const App = () => {
     setPrompt,
     setResponse,
   } = useContext(datacontext);
-
-  useEffect(() => {
-    if (speaking && prompt === 'listening...') {
-      recognition.start();
-    }
-  }, [speaking, prompt, recognition]);
 
   const handleClick = () => {
     setPrompt("listening...");
@@ -39,9 +32,9 @@ const App = () => {
       ) : (
         <div className="response">
           {!response ? (
-            <img src={speak} alt="Listening" id="speak"/>
+            <img src={speak} alt="Listening" className="speak-img"/>
           ) : (
-            <img src={aigif} alt="AI Response" id="speak"/> 
+            <img src={aigif} alt="AI Response" className="aigif-img"/> 
           )}
           <p>{prompt}</p>
         </div>
